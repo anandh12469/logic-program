@@ -1,0 +1,33 @@
+a="My madam mother tongue is malayalam"
+i=0
+si=0
+ei=0
+n=len(a)
+a1=0
+a2=0
+while(i<len(a)):
+    ans=a[i]
+    j=0
+    if(i+1!=n and a[i]!=a[i+1]):
+        while(i-j!=0 and i+j!=n):
+            if(a[i-j]==a[i+j]):
+                ans=a[i-j]+ans+a[i+j]
+                j=j+1
+                a1=i-j
+                a2=i+j
+            else:
+                break
+    else:
+        while(i-j!=0 and i+j+1<n):
+            if(a[i-j]==a[i+j+1]):
+                ans=a[i-j]+ans+a[i+j+1]
+                j=j+1
+                a1=i-j
+                a2=i+j+1
+            else:
+                break
+    if(ei-si<a2-a1):
+        ei=a2
+        si=a1
+    i+=1
+print(a[si:ei+1])
