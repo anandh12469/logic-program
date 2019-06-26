@@ -1,0 +1,32 @@
+emp=list(map(int,input().split()))
+man=list(map(int,input().split()))
+d={}
+for i in emp:
+    l=[]
+    for j in range(len(man)):
+        if(man[j]==i and emp[j]!=i):
+            l.append(emp[j])
+    d[i]=l
+    
+    
+def rec(li,c):
+    if(c==1):
+        print("indirectly manages",end=" ")
+    print(*li,end=" ")
+    for i in li:
+        if(len(d[i])==0):
+            c=c+1
+            continue
+        else:
+            c=c+1
+            rec(d[i],c)
+    
+for i in emp:
+    if(len(d[i])!=0):
+        print(i,"-> directly manages",end=" ")
+        c=0
+        rec(d[i],c)
+        print()
+    else:
+        print(i,"-> not a manager")
+
