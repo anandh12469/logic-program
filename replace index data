@@ -1,0 +1,6 @@
+arr=[3,0,1,2]
+n=len(arr)
+for i in range(0,n):
+    arr[i]=(arr[arr[i]]%n)*n+arr[i]
+for i in range(0,n):
+    print(arr[i]//n)
