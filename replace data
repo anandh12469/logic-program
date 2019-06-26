@@ -1,0 +1,12 @@
+n=int(input())
+a=int(input())
+c=int(input())
+res = 0
+pow =1
+while(n>=pow):
+    r=(n//pow)%10
+    if r==a:
+        r=c
+    res=r*pow+res
+    pow=pow*10
+print(res)
